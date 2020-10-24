@@ -1,21 +1,15 @@
-import React, { useEffect } from "react";
-import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
-import { observer } from "mobx-react-lite";
-import UserList from "./UserList.js";
+import UserList from "./UserList";
+import Footer from "./Footer";
 
-function App({ store }) {
-  useEffect(() => {
-    store.users = [
-      { id: 1, name: "Arna", lastName: "Cvetlić" },
-      { id: 2, name: "Nika", lastName: "Ragva" },
-    ];
-  }, []);
+function App() {
   return (
-    <div className="App">
-      <UserList store={store} />
-    </div>
+    <>
+      <UserList />
+      <Footer />
+    </>
   );
 }
 
-export default observer(App);
+export default App;

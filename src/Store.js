@@ -1,11 +1,11 @@
 import { makeAutoObservable } from "mobx";
+import { createContext } from "react";
 
-export default class Store {
+export const StoreContext = createContext();
+export class Store {
   title = "Setcce";
   users = [];
   constructor() {
     makeAutoObservable(this);
   }
 }
-
-export const store = new Store();
