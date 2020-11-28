@@ -1,9 +1,9 @@
 import React from "react";
 import { observer } from "mobx-react-lite";
-import { StoreContext } from "./Store.js";
+import { useStore } from "./Store.js";
 
 function UserList() {
-  const store = React.useContext(StoreContext);
+  const store = useStore();
 
   function renderList() {
     return store.users.map((user) => {
